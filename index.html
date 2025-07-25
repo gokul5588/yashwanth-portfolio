@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yashwanth Gokul Challagondla | Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<style>
+  .cert-logo {
+    transition: transform 0.3s ease-in-out;
+  }
+  .cert-logo:hover {
+    transform: scale(1.15) rotate(5deg);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  .dark-mode {
+    background-color: #1a202c;
+    color: #f7fafc;
+  }
+  .floating-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+  }
+  .fade-in {
+    animation: fadeIn 1s ease-in-out;
+  }
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  .nav-indicator {
+    position: fixed;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .nav-indicator a {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #cbd5e0;
+    display: block;
+    transition: background 0.3s;
+  }
+  .nav-indicator a.active,
+  .nav-indicator a:hover {
+    background: #3b82f6;
+  }
+  .parallax-bg {
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+  }
+</style>
+<script>
+  function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+  }
+</script>
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans">
+  <nav class="fixed top-0 w-full bg-white shadow z-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex justify-between items-center py-3">
+        <h1 class="text-xl font-bold text-blue-700">Yashwanth Gokul</h1>
+        <ul class="flex space-x-4 text-sm font-semibold text-blue-600">
+          <li><a href="#intro" class="hover:underline">Home</a></li>
+          <li><a href="#tech" class="hover:underline">Tech Stack</a></li>
+          <li><a href="#projects" class="hover:underline">Projects</a></li>
+          <li><a href="#education" class="hover:underline">Education</a></li>
+          <li><a href="#experience" class="hover:underline">Experience</a></li>
+          <li><a href="#contact" class="hover:underline">Contact</a></li>
+        </ul>
+        
+      </div>
+    </div>
+  </nav>
+  <div class="pt-20">
+  <div class="nav-indicator">
+    <a href="#intro" id="link-intro"></a>
+    <a href="#tech" id="link-tech"></a>
+    <a href="#projects" id="link-projects"></a>
+    <a href="#education" id="link-education"></a>
+    <a href="#experience" id="link-experience"></a>
+    <a href="#contact" id="link-contact"></a>
+  </div>
+  <script>
+    const sections = ['intro', 'tech', 'projects', 'education', 'experience', 'contact'];
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const id = entry.target.id;
+        if (entry.isIntersecting) {
+          document.querySelectorAll('.nav-indicator a').forEach(link => link.classList.remove('active'));
+          const activeLink = document.querySelector(`#link-${id}`);
+          if (activeLink) activeLink.classList.add('active');
+        }
+      });
+    }, { threshold: 0.5 });
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+  </script>
+  
+  
+  </div>
+<section id="intro" class="fade-in min-h-screen flex flex-col items-center justify-center text-center p-8 bg-gradient-to-b from-blue-50 to-white parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1605379399642-870262d3d051?auto=format&fit=crop&w=1600&q=80');">
+  <h1 class="text-4xl md:text-6xl font-bold text-white">Yashwanth Gokul Challagondla</h1>
+  <p class="mt-2 text-xl md:text-2xl text-white">Python Developer | ML Engineer | Backend Specialist</p>
+  <p class="mt-1 text-md text-white">Based in India | Open to Work</p>
+  <div class="mt-6 max-w-3xl text-lg md:text-xl text-white leading-relaxed bg-black bg-opacity-40 p-6 rounded-lg">
+  <p>I’m a detail-oriented and driven software engineer with over 3 years of experience in full-stack development and AI-driven solutions. My expertise lies in Python-based backend systems, RESTful APIs, and deep learning pipelines. I thrive in agile, cross-functional teams and am passionate about solving complex technical problems through clean, maintainable code.</p>
+  <p class="mt-4">Currently focused on Python-centric roles involving data science, machine learning, and backend development. Exploring impactful solutions in computer vision, 3D reconstruction, and scalable software design.</p>
+</div>
+</section>
+
+  <section id="tech" class="fade-in p-6 md:p-12 bg-gradient-to-br from-white to-blue-50">
+    <h2 class="text-2xl font-semibold text-blue-700 mb-4 flex items-center gap-2">
+  <img src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/64/external-coding-web-development-flatart-icons-outline-flatarticons.png" class="w-8 h-8" alt="Tech Stack Icon" />
+  🚀 Tech Stack
+</h2>
+    <ul class="grid grid-cols-2 md:grid-cols-3 gap-4 text-lg">
+      <li>Java</li><li>Python</li><li>SQL</li>
+      <li>Spring Boot</li><li>PyTorch</li><li>Open3D</li>
+      <li>Git</li><li>Postman</li><li>VS Code</li>
+    </ul>
+  </section>
+
+  <section id="projects" class="fade-in p-6 md:p-12 bg-gradient-to-br from-gray-100 to-white">
+  <h2 class="text-2xl font-semibold text-blue-700 mb-6">🛠️ Projects</h2>
+  <div class="grid gap-6 md:grid-cols-2">
+    <div class="flex items-start gap-4 p-4 bg-white rounded-lg shadow">
+      <img src="https://img.icons8.com/3d-fluency/94/cube.png" class="w-12 h-12" alt="3D Icon" />
+      <div>
+        <h3 class="text-xl font-bold">3D Object Reconstruction</h3>
+        <p class="text-gray-700">Single-image → Voxel Output using PyTorch & Open3D</p>
+        <button onclick="document.getElementById('popup-3d').classList.remove('hidden')" class="text-sm mt-2 text-blue-600 underline">View Details</button>
+      </div>
+    </div>
+    <div class="flex items-start gap-4 p-4 bg-white rounded-lg shadow">
+      <img src="https://img.icons8.com/3d-fluency/94/api-settings.png" class="w-12 h-12" alt="API Icon" />
+      <div>
+        <h3 class="text-xl font-bold">ServiceNow HRSD APIs</h3>
+        <p class="text-gray-700">Modular REST APIs built using Spring Boot, tested with Postman</p>
+        <button onclick="document.getElementById('popup-hrsd').classList.remove('hidden')" class="text-sm mt-2 text-blue-600 underline">View Details</button>
+      </div>
+    </div>
+    <div class="flex items-start gap-4 p-4 bg-white rounded-lg shadow">
+      <img src="https://img.icons8.com/3d-fluency/94/wind.png" class="w-12 h-12" alt="Pollution Icon" />
+      <div>
+        <h3 class="text-xl font-bold">PM2.5 Pollution Study</h3>
+        <p class="text-gray-700">Delhi Air Quality Analysis using Python and Feature Engineering</p>
+        <button onclick="document.getElementById('popup-pm25').classList.remove('hidden')" class="text-sm mt-2 text-blue-600 underline">View Details</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section id="education" class="fade-in p-6 md:p-12 bg-gradient-to-br from-white to-indigo-50">
+    <h2 class="text-2xl font-semibold text-blue-700 mb-6">📚 Education</h2>
+    <div class="space-y-8">
+      <div class="bg-gray-100 shadow-sm p-6 rounded-lg">
+        <h3 class="text-xl font-bold text-gray-900">Cleveland State University – Ohio, USA</h3>
+        <p class="text-sm text-gray-500 italic">M.S. in Computer Science | CGPA: 3.79/4.0</p>
+        <p class="mt-2 text-gray-700">Integrated with Artificial Intelligence and Deep Learning curriculum.</p>
+      </div>
+
+      <div class="bg-gray-100 shadow-sm p-6 rounded-lg">
+        <h3 class="text-xl font-bold text-gray-900">Jain University – Bangalore, India</h3>
+        <p class="text-sm text-gray-500 italic">B.Tech in Electronics & Communication Engineering | GPA: 8.8/10</p>
+        <p class="mt-2 text-gray-700">Graduated June 2020 with strong foundation in embedded systems and VLSI design.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="fade-in p-6 md:p-12 bg-gradient-to-br from-gray-100 to-white">
+  <h2 class="text-2xl font-semibold text-blue-700 mb-6">👨‍💻 Professional Experience</h2>
+  <div class="grid gap-6 md:grid-cols-2">
+    <div class="flex items-start gap-4 p-4 bg-white rounded-lg shadow">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" class="w-12 h-12" alt="Samsung Logo" />
+      <div>
+        <h3 class="text-xl font-bold text-gray-900">Samsung Research Institute – Bangalore</h3>
+<p class="text-sm text-gray-500 italic">Engineer | Jan 2021 – Jul 2023</p>
+<p class="text-gray-700">Led edge AI initiatives focused on deep learning model compression and efficient deployment. Worked extensively on real-time video super-resolution models and collaborated on patent-worthy innovations.</p>
+        <button onclick="document.getElementById('popup-samsung').classList.remove('hidden')" class="text-sm mt-2 text-blue-600 underline">View Details</button>
+      </div>
+    </div>
+    <div class="flex items-start gap-4 p-4 bg-white rounded-lg shadow">
+      <img src="https://img.icons8.com/color/48/artificial-intelligence.png" class="w-12 h-12" alt="AI Icon" />
+      <div>
+        <h3 class="text-xl font-bold text-gray-900">Attra AI Infotech Pvt. Ltd. – Bangalore</h3>
+<p class="text-sm text-gray-500 italic">Data Science Intern | Sept 2020 – Dec 2020</p>
+<p class="text-gray-700">Developed a full ML pipeline to forecast PM2.5 levels in Delhi using over 25 meteorological and satellite-based features. Integrated data sources like Copernicus, LAADS DAAC, and CPCB for accurate, scalable prediction models.</p>
+        <button onclick="document.getElementById('popup-attra').classList.remove('hidden')" class="text-sm mt-2 text-blue-600 underline">View Details</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Certifications Section -->
+<section class="fade-in p-6 md:p-12 bg-gradient-to-br from-white to-blue-50">
+  <h2 class="text-2xl font-semibold text-blue-700 mb-6">🎓 Certifications</h2>
+  <div class="space-y-8">
+    <div class="flex items-center gap-4">
+        <img src="https://img.icons8.com/fluency/48/000000/python.png" alt="Python Icon" class="w-8 h-8 cert-logo">
+        <h3 class="text-xl font-bold text-gray-900">Python for Everybody – University of Michigan </h3>
+      </div>
+      <p class="text-sm text-gray-500 italic">Completed Online | Foundation in Python</p>
+    </div>
+   <div class="flex items-center gap-4">
+        <img src="https://img.icons8.com/office/40/artificial-intelligence.png" alt="DL Icon" class="w-8 h-8 cert-logo">
+        <h3 class="text-xl font-bold text-gray-900">Deep Learning Specialization – Andrew Ng</h3>
+      </div>
+      <p class="text-sm text-gray-500 italic">DeepLearning.AI | Neural Networks, CNNs, Sequence Models</p>
+    </div>
+    <div class="flex items-center gap-4">
+        <img src="https://img.icons8.com/color/48/000000/amazon-web-services.png" alt="AWS Icon" class="w-8 h-8 cert-logo">
+        <h3 class="text-xl font-bold text-gray-900">AWS Certified Cloud Practitioner</h3>
+      </div>
+      <p class="text-sm text-gray-500 italic">Amazon Web Services | Cloud Concepts & Best Practices</p>
+    </div>
+  </div>
+</section>
+
+<!-- Call-to-Action Section -->
+
+
+<!-- Request Resume Section -->
+<section class="fade-in p-6 md:p-12 bg-gray-50 text-center">
+  <h2 class="text-2xl font-semibold text-blue-700 mb-4">📄 Need My Resume?</h2>
+  <p class="text-gray-700 mb-4">Want a copy of my resume? Feel free to reach out via LinkedIn or email and I’ll send it right over.</p>
+  <a href="mailto:yashwanthgokul@gmail.com" class="inline-block px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition">📬 Request via Email</a>
+  <p class="mt-2 text-sm text-gray-500">or message me on <a href="https://www.linkedin.com/in/yashwanthch5588" class="text-blue-600 hover:underline">LinkedIn</a></p>
+</section>
+<script>
+  setTimeout(() => {
+    const banner = document.createElement('div');
+    banner.innerHTML = `
+      <div id="resume-banner" class="fixed bottom-6 left-6 bg-white shadow-lg border px-4 py-3 rounded-lg text-sm text-gray-700 z-50 flex items-center justify-between gap-4">
+        <span>💬 Let me know if you'd like a copy of my resume!</span>
+        <button onclick="document.getElementById('resume-banner').remove()" class="text-gray-500 hover:text-red-500 text-lg font-bold">&times;</button>
+      </div>`;
+    document.body.appendChild(banner);
+    setTimeout(() => {
+      const el = document.getElementById('resume-banner');
+      if (el) el.remove();
+    }, 6000);
+  }, 30000);
+</script>
+
+<!-- Testimonials Section -->
+<section class="fade-in" class="p-6 md:p-12 bg-gray-100">
+  <h2 class="text-2xl font-semibold text-blue-700 mb-6">💬 Testimonials</h2>
+  <blockquote class="italic text-gray-700 max-w-3xl mx-auto text-center">
+    "Yashwanth brings clarity and dedication to every project. A dependable problem-solver!"
+    <br />– Former Manager
+  </blockquote>
+</section>
+
+ <section id="contact" class="fade-in bg-white text-center p-8">
+  <h2 class="text-2xl font-semibold text-blue-700 mb-4">📬 Let’s Connect</h2>
+  <p class="text-lg text-gray-700 mb-2">Got a role that fits? Want to collaborate or just say hi?</p>
+  <button onclick="document.getElementById('popup-contact').classList.remove('hidden')" class="inline-block px-6 py-3 text-white bg-blue-600 hover:bg-blue-700 rounded-full text-lg font-semibold transition">
+    ✉️ Get in Touch
+  </button>
+</section>
+
+<!-- Contact Popup -->
+<div id="popup-contact" class="fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center hidden z-50">
+  <div class="bg-white max-w-md w-full p-6 rounded-lg shadow-lg relative">
+    <button onclick="document.getElementById('popup-contact').classList.add('hidden')" class="absolute top-2 right-4 text-xl font-bold text-gray-500 hover:text-gray-800">&times;</button>
+    <h3 class="text-xl font-bold text-blue-700 mb-4">📞 Contact Details</h3>
+    <ul class="text-left space-y-4 text-gray-700">
+      <li class="flex items-center gap-2">
+        <img src="https://img.icons8.com/color/48/000000/phone--v1.png" class="w-6 h-6" alt="Phone" />
+        <a href="tel:+14803880637" class="text-blue-600 hover:underline">+1 480-388-0637</a>
+      </li>
+      <li class="flex items-center gap-2">
+        <img src="https://img.icons8.com/fluency/48/000000/apple-mail.png" class="w-6 h-6" alt="Email" />
+        <a href="mailto:yashwanthgokul@gmail.com" class="text-blue-600 hover:underline">yashwanthgokul@gmail.com</a>
+      </li>
+      <li class="flex items-center gap-2">
+        <img src="https://img.icons8.com/color/48/000000/linkedin.png" class="w-6 h-6" alt="LinkedIn" />
+        <a href="https://www.linkedin.com/in/yashwanthch5588" target="_blank" class="text-blue-600 hover:underline">linkedin.com/in/yashwanthch5588</a>
+      </li>
+      <li class="flex items-center gap-2">
+        <img src="https://img.icons8.com/ios-filled/50/000000/github.png" class="w-6 h-6" alt="GitHub" />
+        <a href="https://github.com/yashwanthch" target="_blank" class="text-blue-600 hover:underline">github.com/yashwanthch</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+<!-- 3D Project Popup -->
+<div id="popup-3d" class="fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center hidden z-50">
+  <div class="bg-white max-w-2xl w-full p-6 rounded-lg shadow-lg relative">
+    <button onclick="document.getElementById('popup-3d').classList.add('hidden')" class="absolute top-2 right-4 text-xl font-bold text-gray-500 hover:text-gray-800">&times;</button>
+    <h3 class="text-2xl font-bold text-blue-700 mb-2">3D Object Reconstruction</h3>
+    <p class="text-gray-700 mb-4">This project reconstructs 3D voxel models from a single 2D image using deep learning. The pipeline includes CNN-based encoders and 3D decoders trained on ShapeNet data with PyTorch. Visualization is handled using Open3D.</p>
+    <iframe src="./3D_Object_Reconstruction_Report.pdf" class="w-full h-96 border rounded" frameborder="0"></iframe>
+  </div>
+</div>
+<!-- HRSD Project Popup -->
+<div id="popup-hrsd" class="fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center hidden z-50">
+  <div class="bg-white max-w-2xl w-full p-6 rounded-lg shadow-lg relative">
+    <button onclick="document.getElementById('popup-hrsd').classList.add('hidden')" class="absolute top-2 right-4 text-xl font-bold text-gray-500 hover:text-gray-800">&times;</button>
+    <h3 class="text-2xl font-bold text-blue-700 mb-2">ServiceNow HRSD APIs</h3>
+    <p class="text-gray-700 mb-4">Designed and built RESTful APIs for HR case management using Spring Boot. Included user authentication, role-based workflows, and seamless Postman testing. Integrated into ServiceNow HRSD workflows.</p>
+    <iframe src="./ServiceNow_HRSD_APIs_Report.pdf" class="w-full h-96 border rounded" frameborder="0"></iframe>
+  </div>
+</div>
+
+<!-- PM2.5 Project Popup -->
+<div id="popup-pm25" class="fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center hidden z-50">
+  <div class="bg-white max-w-2xl w-full p-6 rounded-lg shadow-lg relative">
+    <button onclick="document.getElementById('popup-pm25').classList.add('hidden')" class="absolute top-2 right-4 text-xl font-bold text-gray-500 hover:text-gray-800">&times;</button>
+    <h3 class="text-2xl font-bold text-blue-700 mb-2">PM2.5 Pollution Study</h3>
+    <p class="text-gray-700 mb-4">Analyzed pollution levels in Delhi using meteorological + satellite data. Built ML pipeline using XGBoost achieving RMSE ~18. Used data from Copernicus, LAADS DAAC, CPCB. Focused on ground-air satellite correlation.</p>
+    <iframe src="./PM25_Pollution_Study_Report.pdf" class="w-full h-96 border rounded" frameborder="0"></iframe>
+  </div>
+</div>
+<!-- Samsung Experience Popup -->
+<div id="popup-samsung" class="fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center hidden z-50">
+  <div class="bg-white max-w-2xl w-full p-6 rounded-lg shadow-lg relative">
+    <button onclick="document.getElementById('popup-samsung').classList.add('hidden')" class="absolute top-2 right-4 text-xl font-bold text-gray-500 hover:text-gray-800">&times;</button>
+    <h3 class="text-2xl font-bold text-blue-700 mb-2">Samsung Research Institute – Bangalore</h3>
+    <p class="text-gray-700 mb-4">Worked as an Engineer on edge AI solutions and optimized neural networks for mobile deployment. Highlights include:</p>
+    <ul class="list-disc list-inside text-sm text-gray-700 space-y-2">
+      <li>Led lightweight model compression techniques for real-time video super-resolution on mobile GPUs.</li>
+      <li>Reduced inference time significantly using model quantization and pruning without compromising accuracy.</li>
+      <li>Actively participated in research review meetings and contributed to 2 patent filings during tenure.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Attra AI Experience Popup -->
+<div id="popup-attra" class="fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center hidden z-50">
+  <div class="bg-white max-w-2xl w-full p-6 rounded-lg shadow-lg relative">
+    <button onclick="document.getElementById('popup-attra').classList.add('hidden')" class="absolute top-2 right-4 text-xl font-bold text-gray-500 hover:text-gray-800">&times;</button>
+    <h3 class="text-2xl font-bold text-blue-700 mb-2">Attra AI Infotech Pvt. Ltd. – Bangalore</h3>
+    <p class="text-gray-700 mb-4">Contributed as a Data Science Intern on pollution forecasting pipelines. Key accomplishments:</p>
+    <ul class="list-disc list-inside text-sm text-gray-700 space-y-2">
+      <li>Designed data pipelines aggregating satellite and ground station data for environmental metrics.</li>
+      <li>Enhanced model accuracy through feature engineering and ensemble learning (XGBoost, Random Forest).</li>
+      <li>Collaborated with GIS experts to improve location-based forecasting reliability across cities.</li>
+    </ul>
+  </div>
+</div>
+</body>
+</html>
